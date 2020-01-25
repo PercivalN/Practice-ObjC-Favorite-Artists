@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="OEf-np-J53" detailTextLabel="lvZ-vq-k30" style="IBUITableViewCellStyleSubtitle" id="BMY-2p-QH2">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArtistCell" textLabel="OEf-np-J53" detailTextLabel="lvZ-vq-k30" style="IBUITableViewCellStyleSubtitle" id="BMY-2p-QH2">
                                 <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BMY-2p-QH2" id="MSl-va-oK7">
@@ -64,7 +64,7 @@
         <!--Add New Artist-->
         <scene sceneID="Rr8-2p-06Z">
             <objects>
-                <viewController id="qtI-jM-3ro" sceneMemberID="viewController">
+                <viewController id="qtI-jM-3ro" customClass="LSIArtistDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nod-d5-2ih">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,8 +118,18 @@
                         <viewLayoutGuide key="safeArea" id="626-pa-D9k"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Artist" id="fA1-Lt-Afp">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="eBz-iZ-aBH"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="eBz-iZ-aBH">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="qtI-jM-3ro" id="0hG-fC-5dP"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="artistNameLabel" destination="iol-2m-lZF" id="AM7-D8-1b3"/>
+                        <outlet property="bioTextView" destination="Inj-I5-Yhk" id="dgO-EL-Ldq"/>
+                        <outlet property="searchBar" destination="PCc-aB-KVK" id="IlY-Wz-zQ7"/>
+                        <outlet property="yearFormedLabel" destination="kBe-gc-5JK" id="oH3-5e-6uG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="enD-6P-FIG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -148,6 +158,6 @@
         <image name="plus.magnifyingglass" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3Ig-vw-gRv"/>
+        <segue reference="wOZ-SM-51Y"/>
     </inferredMetricsTieBreakers>
 </document>

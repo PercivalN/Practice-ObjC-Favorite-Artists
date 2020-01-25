@@ -7,26 +7,69 @@
 //
 
 #import "LSIArtistDetailViewController.h"
+#import "LSIArtistController.h"
+#import "LSIArtist.h"
 
 @interface LSIArtistDetailViewController ()
+
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UILabel *artistNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *yearFormedLabel;
+@property (weak, nonatomic) IBOutlet UITextView *bioTextView;
+
 
 @end
 
 @implementation LSIArtistDetailViewController
 
+- (instancetype)initWithCoder:(NSCoder *)coder {
+	if (self = [super initWithCoder:coder]) {
+		_artistController = [[LSIArtistController alloc] init];
+	}
+	return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+	self.searchBar.delegate = self;
 }
 
-/*
+- (IBAction)saveButtonTapped:(UIBarButtonItem *)sender {
+}
+
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+	self.searchBar.showsCancelButton = YES;
 }
-*/
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+	self.searchBar.showsCancelButton = NO;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+	[self.searchBar resignFirstResponder];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+	NSString *artistSearchQuery = self.searchBar.text;
+	[_artistController searchArtistWithName:artistSearchQuery completion:^(LSIArtist *artist, NSError *error) {
+		if (error) {
+			NSLog(@"Error fetching artist data with searchQuery: %@:", error);
+			return;
+		}
+
+		dispatch_async(dispatch_get_main_queue(), ^{
+			self.artistNameLabel.text = artist.artistName;
+			NSString *yearFormedStr = [NSString stringWithFormat:@"Year formed: %d", artist.yearFormed];
+			self.yearFormedLabel.text = yearFormedStr;
+			self.bioTextView.text = artist.bio;
+		});
+	}];
+
+	[self.searchBar resignFirstResponder];
+}
+
 
 @end

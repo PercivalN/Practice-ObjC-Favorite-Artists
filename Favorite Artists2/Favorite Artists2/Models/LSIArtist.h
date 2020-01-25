@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MJRArtist : NSObject
+@interface LSIArtist : NSObject
 
 @property NSString *artistName;
 @property int yearFormed;
