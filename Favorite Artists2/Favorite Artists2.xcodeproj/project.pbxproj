@@ -19,6 +19,8 @@
 		DD882DF223DC471500DFDD8C /* LSIArtistDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD882DF023DC471500DFDD8C /* LSIArtistDetailViewController.m */; };
 		DD882DF523DC47AB00DFDD8C /* LSIArtistsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD882DF423DC47AB00DFDD8C /* LSIArtistsTableViewController.m */; };
 		DD882DF623DC47AB00DFDD8C /* LSIArtistsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD882DF423DC47AB00DFDD8C /* LSIArtistsTableViewController.m */; };
+		DD882DFC23DC665800DFDD8C /* LSIArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = DD882DFB23DC665800DFDD8C /* LSIArtist.m */; };
+		DD882DFD23DC665800DFDD8C /* LSIArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = DD882DFB23DC665800DFDD8C /* LSIArtist.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 		DD882DF023DC471500DFDD8C /* LSIArtistDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIArtistDetailViewController.m; sourceTree = "<group>"; };
 		DD882DF323DC47AB00DFDD8C /* LSIArtistsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIArtistsTableViewController.h; sourceTree = "<group>"; };
 		DD882DF423DC47AB00DFDD8C /* LSIArtistsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIArtistsTableViewController.m; sourceTree = "<group>"; };
+		DD882DF923DC65C200DFDD8C /* ArtistJson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ArtistJson; sourceTree = "<group>"; };
+		DD882DFA23DC665800DFDD8C /* LSIArtist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIArtist.h; sourceTree = "<group>"; };
+		DD882DFB23DC665800DFDD8C /* LSIArtist.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIArtist.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +100,7 @@
 				DD882DEC23DC467B00DFDD8C /* Resources */,
 				DD882DEE23DC46C100DFDD8C /* View Controllers */,
 				DD882DED23DC46A600DFDD8C /* Storyboards */,
+				DD882DFE23DC667000DFDD8C /* Models */,
 			);
 			path = "Favorite Artists2";
 			sourceTree = "<group>";
@@ -118,6 +124,7 @@
 				DD882DD123DC44C800DFDD8C /* Assets.xcassets */,
 				DD882DD623DC44C800DFDD8C /* Info.plist */,
 				DD882DD723DC44C800DFDD8C /* main.m */,
+				DD882DF923DC65C200DFDD8C /* ArtistJson */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -142,6 +149,15 @@
 				DD882DF423DC47AB00DFDD8C /* LSIArtistsTableViewController.m */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		DD882DFE23DC667000DFDD8C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DD882DFA23DC665800DFDD8C /* LSIArtist.h */,
+				DD882DFB23DC665800DFDD8C /* LSIArtist.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +266,7 @@
 				DD882DC723DC44C500DFDD8C /* AppDelegate.m in Sources */,
 				DD882DD823DC44C800DFDD8C /* main.m in Sources */,
 				DD882DCA23DC44C500DFDD8C /* SceneDelegate.m in Sources */,
+				DD882DFC23DC665800DFDD8C /* LSIArtist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD882DE223DC44C800DFDD8C /* Favorite_Artists2Tests.m in Sources */,
+				DD882DFD23DC665800DFDD8C /* LSIArtist.m in Sources */,
 				DD882DF623DC47AB00DFDD8C /* LSIArtistsTableViewController.m in Sources */,
 				DD882DF223DC471500DFDD8C /* LSIArtistDetailViewController.m in Sources */,
 			);
